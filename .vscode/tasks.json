@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${fileDirname}"
+    },
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "build active file",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/out/${fileBasenameNoExtension}",
+                "-D__LINUX__" //标识linux下运行
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: /usr/bin/g++"
+        },
+        {
+            "type": "process",
+            "label": "buildout",
+            "command": "/usr/bin/x86_64-w64-mingw32-g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/out/${fileBasenameNoExtension}.exe",
+                "-static-libstdc++", //添加windows下必要的运行库
+                "-static-libgcc", //添加windows下必要的运行库
+                "-D__WINDOWS__" //标识windows下运行
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": [
+                "build active file"
+            ]
+        }
+    ]
+}
