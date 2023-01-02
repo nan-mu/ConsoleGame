@@ -1,4 +1,0 @@
-/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/p21.dir
-/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/ConsoleGame.dir
-/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/edit_cache.dir
-/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/rebuild_cache.dir
