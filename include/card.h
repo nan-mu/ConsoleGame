@@ -1,5 +1,5 @@
 #pragma once
-#include "include.h"
+#include "global.h"
 
 class card {
    private:

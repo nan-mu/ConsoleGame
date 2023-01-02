@@ -1,6 +1,6 @@
 #pragma once
 #include "eventLoop.h"
-#include "include.h"
+#include "global.h"
 #include "player.h"
 
 class roundManager : private EventLoop {
