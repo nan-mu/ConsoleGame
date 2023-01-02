@@ -1,0 +1,3 @@
+/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/test.dir
+/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/edit_cache.dir
+/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/rebuild_cache.dir
