@@ -39,9 +39,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/card.dir/DependInfo.cmake"
-  "CMakeFiles/player.dir/DependInfo.cmake"
-  "CMakeFiles/eventLoop.dir/DependInfo.cmake"
-  "CMakeFiles/roundManager.dir/DependInfo.cmake"
+  "CMakeFiles/p21.dir/DependInfo.cmake"
   "CMakeFiles/ConsoleGame.dir/DependInfo.cmake"
   )

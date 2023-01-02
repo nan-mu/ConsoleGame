@@ -1,7 +1,6 @@
 #pragma once
-#include "card.h"
 #include "eventLoop.h"
-#include "import.h"
+#include "include.h"
 #include "player.h"
 
 class roundManager : private EventLoop {

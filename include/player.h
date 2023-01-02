@@ -1,7 +1,5 @@
 #pragma once
-
 #include "card.h"
-#include "import.h"
 
 class player {
    private:

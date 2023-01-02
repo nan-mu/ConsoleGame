@@ -117,56 +117,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named card
+# Target rules for targets named p21
 
 # Build rule for target.
-card: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 card
-.PHONY : card
+p21: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 p21
+.PHONY : p21
 
 # fast build rule for target.
-card/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/card.dir/build.make CMakeFiles/card.dir/build
-.PHONY : card/fast
-
-#=============================================================================
-# Target rules for targets named player
-
-# Build rule for target.
-player: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 player
-.PHONY : player
-
-# fast build rule for target.
-player/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/player.dir/build.make CMakeFiles/player.dir/build
-.PHONY : player/fast
-
-#=============================================================================
-# Target rules for targets named eventLoop
-
-# Build rule for target.
-eventLoop: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 eventLoop
-.PHONY : eventLoop
-
-# fast build rule for target.
-eventLoop/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/eventLoop.dir/build.make CMakeFiles/eventLoop.dir/build
-.PHONY : eventLoop/fast
-
-#=============================================================================
-# Target rules for targets named roundManager
-
-# Build rule for target.
-roundManager: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 roundManager
-.PHONY : roundManager
-
-# fast build rule for target.
-roundManager/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/roundManager.dir/build.make CMakeFiles/roundManager.dir/build
-.PHONY : roundManager/fast
+p21/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/build
+.PHONY : p21/fast
 
 #=============================================================================
 # Target rules for targets named ConsoleGame
@@ -210,7 +171,8 @@ src/card.o: src/card.cpp.o
 
 # target to build an object file
 src/card.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/card.dir/build.make CMakeFiles/card.dir/src/card.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/src/card.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/src/card.cpp.o
 .PHONY : src/card.cpp.o
 
 src/card.i: src/card.cpp.i
@@ -218,7 +180,8 @@ src/card.i: src/card.cpp.i
 
 # target to preprocess a source file
 src/card.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/card.dir/build.make CMakeFiles/card.dir/src/card.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/src/card.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/src/card.cpp.i
 .PHONY : src/card.cpp.i
 
 src/card.s: src/card.cpp.s
@@ -226,7 +189,8 @@ src/card.s: src/card.cpp.s
 
 # target to generate assembly for a file
 src/card.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/card.dir/build.make CMakeFiles/card.dir/src/card.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/src/card.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/src/card.cpp.s
 .PHONY : src/card.cpp.s
 
 src/eventLoop.o: src/eventLoop.cpp.o
@@ -234,7 +198,8 @@ src/eventLoop.o: src/eventLoop.cpp.o
 
 # target to build an object file
 src/eventLoop.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/eventLoop.dir/build.make CMakeFiles/eventLoop.dir/src/eventLoop.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/src/eventLoop.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/src/eventLoop.cpp.o
 .PHONY : src/eventLoop.cpp.o
 
 src/eventLoop.i: src/eventLoop.cpp.i
@@ -242,7 +207,8 @@ src/eventLoop.i: src/eventLoop.cpp.i
 
 # target to preprocess a source file
 src/eventLoop.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/eventLoop.dir/build.make CMakeFiles/eventLoop.dir/src/eventLoop.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/src/eventLoop.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/src/eventLoop.cpp.i
 .PHONY : src/eventLoop.cpp.i
 
 src/eventLoop.s: src/eventLoop.cpp.s
@@ -250,7 +216,8 @@ src/eventLoop.s: src/eventLoop.cpp.s
 
 # target to generate assembly for a file
 src/eventLoop.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/eventLoop.dir/build.make CMakeFiles/eventLoop.dir/src/eventLoop.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/src/eventLoop.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/src/eventLoop.cpp.s
 .PHONY : src/eventLoop.cpp.s
 
 src/player.o: src/player.cpp.o
@@ -258,7 +225,8 @@ src/player.o: src/player.cpp.o
 
 # target to build an object file
 src/player.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/player.dir/build.make CMakeFiles/player.dir/src/player.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/src/player.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/src/player.cpp.o
 .PHONY : src/player.cpp.o
 
 src/player.i: src/player.cpp.i
@@ -266,7 +234,8 @@ src/player.i: src/player.cpp.i
 
 # target to preprocess a source file
 src/player.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/player.dir/build.make CMakeFiles/player.dir/src/player.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/src/player.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/src/player.cpp.i
 .PHONY : src/player.cpp.i
 
 src/player.s: src/player.cpp.s
@@ -274,7 +243,8 @@ src/player.s: src/player.cpp.s
 
 # target to generate assembly for a file
 src/player.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/player.dir/build.make CMakeFiles/player.dir/src/player.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/src/player.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/src/player.cpp.s
 .PHONY : src/player.cpp.s
 
 src/roundManager.o: src/roundManager.cpp.o
@@ -282,7 +252,8 @@ src/roundManager.o: src/roundManager.cpp.o
 
 # target to build an object file
 src/roundManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/roundManager.dir/build.make CMakeFiles/roundManager.dir/src/roundManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/src/roundManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/src/roundManager.cpp.o
 .PHONY : src/roundManager.cpp.o
 
 src/roundManager.i: src/roundManager.cpp.i
@@ -290,7 +261,8 @@ src/roundManager.i: src/roundManager.cpp.i
 
 # target to preprocess a source file
 src/roundManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/roundManager.dir/build.make CMakeFiles/roundManager.dir/src/roundManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/src/roundManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/src/roundManager.cpp.i
 .PHONY : src/roundManager.cpp.i
 
 src/roundManager.s: src/roundManager.cpp.s
@@ -298,7 +270,8 @@ src/roundManager.s: src/roundManager.cpp.s
 
 # target to generate assembly for a file
 src/roundManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/roundManager.dir/build.make CMakeFiles/roundManager.dir/src/roundManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p21.dir/build.make CMakeFiles/p21.dir/src/roundManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/src/roundManager.cpp.s
 .PHONY : src/roundManager.cpp.s
 
 # Help Target
@@ -310,10 +283,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ConsoleGame"
-	@echo "... card"
-	@echo "... eventLoop"
-	@echo "... player"
-	@echo "... roundManager"
+	@echo "... p21"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -7,8 +7,6 @@
 #include <string>
 #include <vector>
 
-#include "spdlog/spdlog.h"
-
 std::random_device seed;
 std::ranlux48 engine(seed());
 std::uniform_int_distribution<> randChar(97, 122);
