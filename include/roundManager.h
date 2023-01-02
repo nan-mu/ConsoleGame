@@ -1,4 +1,5 @@
 #pragma once
+#include "card.h"
 #include "eventLoop.h"
 #include "global.h"
 #include "player.h"
