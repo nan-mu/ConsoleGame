@@ -15,8 +15,7 @@ long randNumber(int length) {
 /// @brief
 /// 冒泡排序，将目标数组的下标存入另一个数组，该数组按照目标数组元素的大小从大到小重排，优点是复杂度为O(n)到O(n^2)
 /// @param arr 目标数组
-template <class T>
-void bubbleSortRank(const std::vector<T>& _arr, std::vector<int>& res) {
+void bubbleSortRank(const std::vector<int>& _arr, std::vector<int>& res) {
     int i;
     std::vector<int> arr(_arr);
     for (int ii = 0; ii < arr.size(); ii++) res.push_back(ii);  // 初始化rank
