@@ -5,6 +5,7 @@ std::ranlux48 engine(seed());
 std::uniform_int_distribution<> randChar(97, 122);
 std::uniform_int_distribution<> randNum(1, 9);
 
+/// @brief 根据长度生成随机数
 long randNumber(int length) {
     std::string res = "";
     for (size_t i = 0; i < length; i++) res += std::to_string(randNum(engine));
