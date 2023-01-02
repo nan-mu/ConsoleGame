@@ -1,10 +1,6 @@
 #pragma once
 // 引用库和部分函数
 
-#if __LINUX__ defined ClearConsole() system("clear");
-#else defined ClearConsole() system("cls");
-#endif
-
 #include <functional>
 #include <iostream>
 #include <random>

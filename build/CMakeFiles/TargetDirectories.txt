@@ -1,3 +1,7 @@
-/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/test.dir
+/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/card.dir
+/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/player.dir
+/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/eventLoop.dir
+/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/roundManager.dir
+/program/package/homework/cpp/ConsoleGame/build/CMakeFiles/ConsoleGame.dir
 /program/package/homework/cpp/ConsoleGame/build/CMakeFiles/edit_cache.dir
 /program/package/homework/cpp/ConsoleGame/build/CMakeFiles/rebuild_cache.dir

@@ -117,41 +117,189 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named card
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
-.PHONY : test
+card: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 card
+.PHONY : card
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+card/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/card.dir/build.make CMakeFiles/card.dir/build
+.PHONY : card/fast
 
-test.o: test.cpp.o
-.PHONY : test.o
+#=============================================================================
+# Target rules for targets named player
+
+# Build rule for target.
+player: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 player
+.PHONY : player
+
+# fast build rule for target.
+player/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/player.dir/build.make CMakeFiles/player.dir/build
+.PHONY : player/fast
+
+#=============================================================================
+# Target rules for targets named eventLoop
+
+# Build rule for target.
+eventLoop: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 eventLoop
+.PHONY : eventLoop
+
+# fast build rule for target.
+eventLoop/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eventLoop.dir/build.make CMakeFiles/eventLoop.dir/build
+.PHONY : eventLoop/fast
+
+#=============================================================================
+# Target rules for targets named roundManager
+
+# Build rule for target.
+roundManager: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 roundManager
+.PHONY : roundManager
+
+# fast build rule for target.
+roundManager/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/roundManager.dir/build.make CMakeFiles/roundManager.dir/build
+.PHONY : roundManager/fast
+
+#=============================================================================
+# Target rules for targets named ConsoleGame
+
+# Build rule for target.
+ConsoleGame: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ConsoleGame
+.PHONY : ConsoleGame
+
+# fast build rule for target.
+ConsoleGame/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/build
+.PHONY : ConsoleGame/fast
+
+main.o: main.cpp.o
+.PHONY : main.o
 
 # target to build an object file
-test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.o
-.PHONY : test.cpp.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-test.i: test.cpp.i
-.PHONY : test.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.i
-.PHONY : test.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-test.s: test.cpp.s
-.PHONY : test.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.s
-.PHONY : test.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+src/card.o: src/card.cpp.o
+.PHONY : src/card.o
+
+# target to build an object file
+src/card.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/card.dir/build.make CMakeFiles/card.dir/src/card.cpp.o
+.PHONY : src/card.cpp.o
+
+src/card.i: src/card.cpp.i
+.PHONY : src/card.i
+
+# target to preprocess a source file
+src/card.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/card.dir/build.make CMakeFiles/card.dir/src/card.cpp.i
+.PHONY : src/card.cpp.i
+
+src/card.s: src/card.cpp.s
+.PHONY : src/card.s
+
+# target to generate assembly for a file
+src/card.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/card.dir/build.make CMakeFiles/card.dir/src/card.cpp.s
+.PHONY : src/card.cpp.s
+
+src/eventLoop.o: src/eventLoop.cpp.o
+.PHONY : src/eventLoop.o
+
+# target to build an object file
+src/eventLoop.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eventLoop.dir/build.make CMakeFiles/eventLoop.dir/src/eventLoop.cpp.o
+.PHONY : src/eventLoop.cpp.o
+
+src/eventLoop.i: src/eventLoop.cpp.i
+.PHONY : src/eventLoop.i
+
+# target to preprocess a source file
+src/eventLoop.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eventLoop.dir/build.make CMakeFiles/eventLoop.dir/src/eventLoop.cpp.i
+.PHONY : src/eventLoop.cpp.i
+
+src/eventLoop.s: src/eventLoop.cpp.s
+.PHONY : src/eventLoop.s
+
+# target to generate assembly for a file
+src/eventLoop.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eventLoop.dir/build.make CMakeFiles/eventLoop.dir/src/eventLoop.cpp.s
+.PHONY : src/eventLoop.cpp.s
+
+src/player.o: src/player.cpp.o
+.PHONY : src/player.o
+
+# target to build an object file
+src/player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/player.dir/build.make CMakeFiles/player.dir/src/player.cpp.o
+.PHONY : src/player.cpp.o
+
+src/player.i: src/player.cpp.i
+.PHONY : src/player.i
+
+# target to preprocess a source file
+src/player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/player.dir/build.make CMakeFiles/player.dir/src/player.cpp.i
+.PHONY : src/player.cpp.i
+
+src/player.s: src/player.cpp.s
+.PHONY : src/player.s
+
+# target to generate assembly for a file
+src/player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/player.dir/build.make CMakeFiles/player.dir/src/player.cpp.s
+.PHONY : src/player.cpp.s
+
+src/roundManager.o: src/roundManager.cpp.o
+.PHONY : src/roundManager.o
+
+# target to build an object file
+src/roundManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/roundManager.dir/build.make CMakeFiles/roundManager.dir/src/roundManager.cpp.o
+.PHONY : src/roundManager.cpp.o
+
+src/roundManager.i: src/roundManager.cpp.i
+.PHONY : src/roundManager.i
+
+# target to preprocess a source file
+src/roundManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/roundManager.dir/build.make CMakeFiles/roundManager.dir/src/roundManager.cpp.i
+.PHONY : src/roundManager.cpp.i
+
+src/roundManager.s: src/roundManager.cpp.s
+.PHONY : src/roundManager.s
+
+# target to generate assembly for a file
+src/roundManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/roundManager.dir/build.make CMakeFiles/roundManager.dir/src/roundManager.cpp.s
+.PHONY : src/roundManager.cpp.s
 
 # Help Target
 help:
@@ -161,10 +309,26 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... ConsoleGame"
+	@echo "... card"
+	@echo "... eventLoop"
+	@echo "... player"
+	@echo "... roundManager"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... src/card.o"
+	@echo "... src/card.i"
+	@echo "... src/card.s"
+	@echo "... src/eventLoop.o"
+	@echo "... src/eventLoop.i"
+	@echo "... src/eventLoop.s"
+	@echo "... src/player.o"
+	@echo "... src/player.i"
+	@echo "... src/player.s"
+	@echo "... src/roundManager.o"
+	@echo "... src/roundManager.i"
+	@echo "... src/roundManager.s"
 .PHONY : help
 
 

@@ -63,7 +63,11 @@ CMAKE_BINARY_DIR = /program/package/homework/cpp/ConsoleGame/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/test.dir/all
+all: CMakeFiles/card.dir/all
+all: CMakeFiles/player.dir/all
+all: CMakeFiles/eventLoop.dir/all
+all: CMakeFiles/roundManager.dir/all
+all: CMakeFiles/ConsoleGame.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +75,145 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/test.dir/clean
+clean: CMakeFiles/card.dir/clean
+clean: CMakeFiles/player.dir/clean
+clean: CMakeFiles/eventLoop.dir/clean
+clean: CMakeFiles/roundManager.dir/clean
+clean: CMakeFiles/ConsoleGame.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/test.dir
+# Target rules for target CMakeFiles/card.dir
 
 # All Build rule for target.
-CMakeFiles/test.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/program/package/homework/cpp/ConsoleGame/build/CMakeFiles --progress-num=1,2 "Built target test"
-.PHONY : CMakeFiles/test.dir/all
+CMakeFiles/card.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/card.dir/build.make CMakeFiles/card.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/card.dir/build.make CMakeFiles/card.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/program/package/homework/cpp/ConsoleGame/build/CMakeFiles --progress-num=3,4 "Built target card"
+.PHONY : CMakeFiles/card.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/test.dir/rule: cmake_check_build_system
+CMakeFiles/card.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /program/package/homework/cpp/ConsoleGame/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/card.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /program/package/homework/cpp/ConsoleGame/build/CMakeFiles 0
-.PHONY : CMakeFiles/test.dir/rule
+.PHONY : CMakeFiles/card.dir/rule
 
 # Convenience name for target.
-test: CMakeFiles/test.dir/rule
-.PHONY : test
+card: CMakeFiles/card.dir/rule
+.PHONY : card
 
 # clean rule for target.
-CMakeFiles/test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/clean
-.PHONY : CMakeFiles/test.dir/clean
+CMakeFiles/card.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/card.dir/build.make CMakeFiles/card.dir/clean
+.PHONY : CMakeFiles/card.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/player.dir
+
+# All Build rule for target.
+CMakeFiles/player.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/player.dir/build.make CMakeFiles/player.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/player.dir/build.make CMakeFiles/player.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/program/package/homework/cpp/ConsoleGame/build/CMakeFiles --progress-num=7,8 "Built target player"
+.PHONY : CMakeFiles/player.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/player.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /program/package/homework/cpp/ConsoleGame/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/player.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /program/package/homework/cpp/ConsoleGame/build/CMakeFiles 0
+.PHONY : CMakeFiles/player.dir/rule
+
+# Convenience name for target.
+player: CMakeFiles/player.dir/rule
+.PHONY : player
+
+# clean rule for target.
+CMakeFiles/player.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/player.dir/build.make CMakeFiles/player.dir/clean
+.PHONY : CMakeFiles/player.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/eventLoop.dir
+
+# All Build rule for target.
+CMakeFiles/eventLoop.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eventLoop.dir/build.make CMakeFiles/eventLoop.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eventLoop.dir/build.make CMakeFiles/eventLoop.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/program/package/homework/cpp/ConsoleGame/build/CMakeFiles --progress-num=5,6 "Built target eventLoop"
+.PHONY : CMakeFiles/eventLoop.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/eventLoop.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /program/package/homework/cpp/ConsoleGame/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/eventLoop.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /program/package/homework/cpp/ConsoleGame/build/CMakeFiles 0
+.PHONY : CMakeFiles/eventLoop.dir/rule
+
+# Convenience name for target.
+eventLoop: CMakeFiles/eventLoop.dir/rule
+.PHONY : eventLoop
+
+# clean rule for target.
+CMakeFiles/eventLoop.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eventLoop.dir/build.make CMakeFiles/eventLoop.dir/clean
+.PHONY : CMakeFiles/eventLoop.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/roundManager.dir
+
+# All Build rule for target.
+CMakeFiles/roundManager.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/roundManager.dir/build.make CMakeFiles/roundManager.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/roundManager.dir/build.make CMakeFiles/roundManager.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/program/package/homework/cpp/ConsoleGame/build/CMakeFiles --progress-num=9,10 "Built target roundManager"
+.PHONY : CMakeFiles/roundManager.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/roundManager.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /program/package/homework/cpp/ConsoleGame/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/roundManager.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /program/package/homework/cpp/ConsoleGame/build/CMakeFiles 0
+.PHONY : CMakeFiles/roundManager.dir/rule
+
+# Convenience name for target.
+roundManager: CMakeFiles/roundManager.dir/rule
+.PHONY : roundManager
+
+# clean rule for target.
+CMakeFiles/roundManager.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/roundManager.dir/build.make CMakeFiles/roundManager.dir/clean
+.PHONY : CMakeFiles/roundManager.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ConsoleGame.dir
+
+# All Build rule for target.
+CMakeFiles/ConsoleGame.dir/all: CMakeFiles/roundManager.dir/all
+CMakeFiles/ConsoleGame.dir/all: CMakeFiles/card.dir/all
+CMakeFiles/ConsoleGame.dir/all: CMakeFiles/player.dir/all
+CMakeFiles/ConsoleGame.dir/all: CMakeFiles/eventLoop.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/program/package/homework/cpp/ConsoleGame/build/CMakeFiles --progress-num=1,2 "Built target ConsoleGame"
+.PHONY : CMakeFiles/ConsoleGame.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ConsoleGame.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /program/package/homework/cpp/ConsoleGame/build/CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ConsoleGame.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /program/package/homework/cpp/ConsoleGame/build/CMakeFiles 0
+.PHONY : CMakeFiles/ConsoleGame.dir/rule
+
+# Convenience name for target.
+ConsoleGame: CMakeFiles/ConsoleGame.dir/rule
+.PHONY : ConsoleGame
+
+# clean rule for target.
+CMakeFiles/ConsoleGame.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConsoleGame.dir/build.make CMakeFiles/ConsoleGame.dir/clean
+.PHONY : CMakeFiles/ConsoleGame.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
