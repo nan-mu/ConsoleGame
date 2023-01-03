@@ -16,10 +16,10 @@ class roundManager : private EventLoop {
 
    public:
     roundManager();  // 回合管理员初始化，但其实是事件循环初始化时添加53张牌
-    ~roundManager();   // 析构函数，还没写完
-    void randCards();  // 随机牌库
-    void debug();      // debug
-    void pvp();        // pvp
+    ~roundManager();                  // 析构函数，还没写完
+    void randCards();                 // 随机牌库
+    void debug();                     // debug
+    void pvp(int num, bool cusName);  // pvp
     // void pve();        // pve，没写完
     void play(std::vector<player>
                   _players);  // 主加载进程，添加第一次要牌任务和要牌尾调用函数

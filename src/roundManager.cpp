@@ -16,13 +16,25 @@ void roundManager::debug() {
     as.push_back(a);
     play(as);
 }
-void roundManager::pvp() {
+/// @brief 根据玩家人数开始对局
+/// @param num 玩家人数
+/// @param cusName 是否自定义玩家名字
+void roundManager::pvp(int num, bool cusName) {
     randCards();
     std::vector<player> as;
-    for (size_t i = 0; i < 2; i++) {
-        player a(std::to_string(i));
+    for (size_t i = 0; i < num; i++) {
+        std::string name = "";
+        if (cusName) {
+            printf("请输入第%d位玩家的名字:", i + 1);
+            getline(std::cin, name);
+        } else {
+            name = "自动编号(" + std::to_string(i + 1) + ")";
+        }
+        spdlog::info("玩家 {}初始化", name);
+        player a(name);
         as.push_back(a);
     }
+    spdlog::info("玩家初始化结束, 载入{}位玩家", num);
     play(as);
 }
 void roundManager::showCardsLib() {
@@ -49,7 +61,7 @@ void roundManager::play(std::vector<player> _players) {
             resCard();
             play();
         },
-        "一轮要牌");
+        "1轮要牌");
     start();
 }
 void roundManager::play() {
@@ -60,7 +72,7 @@ void roundManager::play() {
                 resCard();
                 play();
             },
-            std::to_string(turnsNum) + "轮要牌");
+            std::to_string(turnsNum + 1) + "轮要牌");
     } else {
         enroll([&]() -> void { getPoint(); }, "计算点数");
     }
@@ -104,39 +116,46 @@ void roundManager::resCard() {
 }
 int roundManager::getPoint(int playerIndex) {
     int res = 0;
-    bool A;
+    bool A = false;
     for (size_t i = 0; i < players[playerIndex].hand.size(); i++) {
         if (!(players[playerIndex].hand[i].getValue() % 13)) {
-            res += players[playerIndex].hand[i].getValue();
+            res += players[playerIndex].hand[i].getValue() % 13 + 1;
         } else {
+            // 记录玩家是否持有A
             A = true;
         }
     }
     if (A == true) {
+        // 玩家手中有A时,判断对玩家有利的情况
         if (res <= 10) {
             return res + 11;
         } else {
             return res + 1;
         }
     } else {
+        spdlog::info("玩家 {} 的得分为:{}", players[playerIndex].getName(),
+                     res);
         return res;
     }
 }
 void roundManager::getPoint() {
     std::vector<int> winner;
-    int curl = 0;
+    int winnerPoint = 0;
+    spdlog::info("对局结束 计算分数");
     for (size_t i = 0; i < players.size(); i++) {
-        if (curl < getPoint(i)) {
-            curl = getPoint(i);
-            if (winner.size() != 1) std::vector<int>().swap(winner);
+        if (winnerPoint < getPoint(i)) {
+            winnerPoint = getPoint(i);
+            // 清除平局情况
+            std::vector<int>().swap(winner);
             winner.push_back(i);
-        } else if (curl == getPoint(i)) {
+        } else if (winnerPoint == getPoint(i)) {
+            // 平局情况
             winner.push_back(i);
         }
     }
     printf("这一轮的赢家是：");
     for (size_t i = 0; i < winner.size(); i++) {
-        printf("%s", players[winner[i]].getName().c_str());
+        printf("[%s]", players[winner[i]].getName().c_str());
     }
     printf("\n");
 }

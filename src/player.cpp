@@ -8,16 +8,20 @@ bool player::mayIReqCard() {
     while ((res = getchar()) == 'y') {
         // printf("catch y");
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        spdlog::info("玩家 {} 选择要牌", name);
         return (res == 'y');
     }
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    spdlog::info("玩家 {} 选择不要牌", name);
     return false;
 }
 void player::showCard() {
-    printf("\n你现在的手牌有：");
+    printf("\n%s现在的手牌有：", name.c_str());
+    std::string cardsStr = "";
     for (size_t i = 0; i < hand.size(); i++) {
-        printf("|%s| ", hand[i].getName().c_str());
+        cardsStr += "|" + hand[i].getName() + "| ";
     }
+    spdlog::info("玩家 {} 现有手牌有: {}", name, cardsStr);
     printf("\n");
 }
 
