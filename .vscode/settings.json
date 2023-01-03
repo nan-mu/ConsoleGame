@@ -62,5 +62,8 @@
         "stop_token": "cpp",
         "thread": "cpp"
     },
-    "cmake.configureOnOpen": true
+    "cmake.configureOnOpen": true,
+    "cmake.configureSettings": {
+        "CMAKE_TOOLCHAIN_FILE": "/home/nan/vcpkg/scripts/buildsystems/vcpkg.cmake"
+    }
 }
