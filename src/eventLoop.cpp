@@ -5,11 +5,11 @@ EventLoop::EventLoop(std::function<void()> intiEvent) {
 }
 
 void EventLoop::enroll(std::function<void()> event,
-                       std::string log = "undefined name") {
+                       std::string description = "undefined name") {
     events.push_back(event);
-    logs.push_back(log);
-    // printf("INT: 发现注册 %s\n", log.c_str());
-    spdlog::info("发现注册-{}", log);
+    descriptions.push_back(description);
+    // printf("INT: 发现注册 %s\n", description.c_str());
+    spdlog::info("发现注册id{}  {}", description);
     if (state == 'S') state = 'A';
 }
 
@@ -23,7 +23,7 @@ void EventLoop::start() {
 int EventLoop::next(int eventId) {
     if (eventId < events.size()) {
         // printf("INT: 正在运行 id:%d\n", eventId);
-        spdlog::info("正在运行 id:{}\n", eventId);
+        spdlog::info("正在运行 id:{} \n", eventId);
         events[eventId]();
     } else
         state = 'F';

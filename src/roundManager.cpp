@@ -22,7 +22,7 @@ void roundManager::debug() {
 void roundManager::pvp(int num, bool cusName) {
     randCards();
     std::vector<player> as;
-    for (size_t i = 0; i < num; i++) {
+    for (int i = 0; i < num; i++) {
         std::string name = "";
         if (cusName) {
             printf("请输入第%d位玩家的名字:", i + 1);

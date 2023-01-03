@@ -8,7 +8,7 @@ class EventLoop {
    private:
     /* data */
     std::vector<std::function<void()>> events;  // 事件函数数组
-    std::vector<std::string> logs;
+    std::vector<std::string> descriptions;
 
    public:
     char state = 'S';  // Sleep Activity Final 运行状态标识
