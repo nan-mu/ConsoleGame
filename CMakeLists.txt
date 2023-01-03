@@ -1,7 +1,7 @@
 # 指定最小版本
 cmake_minimum_required(VERSION 3.5)
 
-set(CMAKE_TOOLCHAIN_FILE /home/nan/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
+# set(CMAKE_TOOLCHAIN_FILE /home/nan/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
 set(spdlog_DIR /home/nan/vcpkg/packages/spdlog_x64-linux/share/spdlog)
 set(fmt_DIR /home/nan/vcpkg/packages/fmt_x64-linux/share/fmt)
 
