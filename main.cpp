@@ -13,9 +13,9 @@ int main() {
     ss << std::put_time(std::localtime(&t), "%Y-%m-%d-%H-%M-%S");
     std::string str_time = ss.str();
     auto file_logger = spdlog::basic_logger_st(
-        "basic_logger", "../logs/p21_" + str_time + ".txt");
+        "basic_logger", "../logs/p21_" + str_time + ".log");
     spdlog::set_default_logger(file_logger);
-    spdlog::set_pattern("[%Y-%m-%d %H:%M:%S.%e][%l](%@): %v");
+    spdlog::set_pattern("[%Y-%m-%d %H:%M:%S.%e][%l]: %v");
     spdlog::info("game start!");
 
     roundManager p21;  // 初始化回合管理员

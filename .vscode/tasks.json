@@ -49,21 +49,25 @@
             "type": "shell",
             "label": "cmake",
             "command": "cmake",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
             "args": [
                 ".."
             ],
             "group": {
                 "kind": "test",
-                "isDefault": true
             }
         },
         {
             "type": "shell",
             "label": "make",
             "command": "make",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
             "group": {
                 "kind": "test",
-                "isDefault": true
             }
         },
         {
