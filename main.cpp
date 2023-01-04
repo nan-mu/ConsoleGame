@@ -1,7 +1,5 @@
 #include "roundManager.h"
 
-using namespace std;
-
 int main() {
     // 麻了，windows你就是个贵物，你还抱着你这gkb干吗呀哎呦
     system("chcp 65001");

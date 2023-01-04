@@ -18,10 +18,16 @@ bool player::mayIReqCard() {
 void player::showCard() {
     printf("\n%s现在的手牌有：", name.c_str());
     std::string cardsStr = "";
+
     for (size_t i = 0; i < hand.size(); i++) {
         cardsStr += "|" + hand[i].getName() + "| ";
     }
-    spdlog::info("玩家 {} 现有手牌有: {}", name, cardsStr);
+    if (hand.size())
+        printf("%s", cardsStr.c_str());
+    else
+        printf("null");
+    spdlog::info("玩家 {} 现有手牌有: {}", name,
+                 cardsStr.empty() ? "null" : cardsStr);
     printf("\n");
 }
 

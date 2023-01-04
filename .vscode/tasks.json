@@ -35,7 +35,8 @@
                 "${fileDirname}/out/${fileBasenameNoExtension}.exe",
                 "-static-libstdc++", //添加windows下必要的运行库
                 "-static-libgcc", //添加windows下必要的运行库
-                "-D__WINDOWS__" //标识windows下运行
+                "-D__WINDOWS__", //标识windows下运行
+                "/usr/bin/x86_64-w64-mingw32-g++ main.cpp src/global.cpp src/card.cpp src/player.cpp src/eventLoop.cpp src/roundManager.cpp -o ${workspaceFolder}/Console.exe -static-libstdc++ -static-libgcc -Iinclude"
             ],
             "group": {
                 "kind": "build",
