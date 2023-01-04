@@ -1,41 +1,7 @@
 # 21点游戏
 
-> 这项目还没写完..遇到一个bug，但洗牌是没问题的，要牌有部分问题，还没找出来
->
-> 假如学长学姐有时间的话也请帮帮我解决这个bug
->
-> 由于我的开发环境部署在linux上，生成.exe文件也是linux下安装msys生成的，所以环境配置详见.vscode中的四个文件
->
-> （我的g++和gcc大概率是最新的，忘截图了，貌似是17）
-
-## 洗牌函数 CBlackJack.h 103行
-
-```c++
-void roundManager::randCards() {
-    enroll([&] {
-        std::vector<int> cardsID, seq;
-        for (size_t i = 0; i < cardLib.size(); i++) {
-            cardsID.push_back(cardLib[i].getID());
-        }
-        bubbleSortRank(cardsID, seq);
-        for (size_t i = 0; i < cardLib.size(); i++) {
-            tempCardLib.push_back(cardLib[seq[i]]);
-            tempCardLib[i].newID();
-        }
-        cardLib.swap(tempCardLib);
-        tempCardLib.clear();
-    });
-}
-```
-
-## 洗牌函数代码截图
-
-![image-20221214193100873](./README.assets/image-20221214193100873.png)
-
-## 运行截图
-
-![image-20221214193902641](./README.assets/image-20221214193902641.png)
-
+写完力～
+其实还差跨平台🤥
 ## 思路
 
 使用类似javascript的事件循环的思路管理游戏动作，详见eventLoop.h
