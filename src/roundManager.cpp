@@ -149,6 +149,11 @@ void roundManager::getPoint() {
                     // 平局情况
                     winner.push_back(i);
                 }
+            } else {
+                winnerPoint = tempPoint;
+                // 清除平局情况
+                std::vector<int>().swap(winner);
+                winner.push_back(i);
             }
             winnerType = true;
         } else {
