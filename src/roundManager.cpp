@@ -104,7 +104,6 @@ void roundManager::resCard() {
         bool temp = false;
         if (mustReqCard[i] != 0) {
             temp = players[i].mayIReqCard();
-            // printf("\ncatch temp:%d", temp);
         }
         if (temp || (mustReqCard[i] == 0)) {
             resCard(players[i].hand);
@@ -119,36 +118,40 @@ int roundManager::getPoint(int playerIndex) {
     bool A = false;
     for (size_t i = 0; i < players[playerIndex].hand.size(); i++) {
         if (!(players[playerIndex].hand[i].getValue() % 13)) {
-            res += players[playerIndex].hand[i].getValue() % 13 + 1;
+            spdlog::debug("算牌阶段: 计算牌|{}| |{}| res|{}|",
+                          players[playerIndex].hand[i].getName(),
+                          players[playerIndex].hand[i].getValue(), res);
+            res += (players[playerIndex].hand[i].getValue() % 13) + 1;
         } else {
             // 记录玩家是否持有A
             A = true;
         }
     }
-    if (A == true) {
+    if (A) {
         // 玩家手中有A时,判断对玩家有利的情况
         if (res <= 10) {
-            return res + 11;
+            res += 11;
         } else {
-            return res + 1;
+            res += 1;
         }
-    } else {
-        spdlog::info("玩家 {} 的得分为:{}", players[playerIndex].getName(),
-                     res);
-        return res;
     }
+    players[playerIndex].showCard();
+    spdlog::info("算分阶段: 玩家|{}|的得分为|{}|",
+                 players[playerIndex].getName(), res);
+    return res;
 }
 void roundManager::getPoint() {
     std::vector<int> winner;
     int winnerPoint = 0;
-    spdlog::info("对局结束 计算分数");
+    spdlog::info("对局结束，计算分数");
     for (size_t i = 0; i < players.size(); i++) {
-        if (winnerPoint < getPoint(i)) {
-            winnerPoint = getPoint(i);
+        int tempPoint = getPoint(i);
+        if (winnerPoint < tempPoint) {
+            winnerPoint = tempPoint;
             // 清除平局情况
             std::vector<int>().swap(winner);
             winner.push_back(i);
-        } else if (winnerPoint == getPoint(i)) {
+        } else if (winnerPoint == tempPoint) {
             // 平局情况
             winner.push_back(i);
         }
@@ -156,7 +159,7 @@ void roundManager::getPoint() {
     printf("这一轮的赢家是：");
     for (size_t i = 0; i < winner.size(); i++) {
         printf("[%s]", players[winner[i]].getName().c_str());
+        spdlog::info("算分阶段: 胜者为|{}|", players[winner[i]].getName());
     }
-    spdlog::info("胜者为{}，他的牌为{}，点数为{}");
     printf("\n");
 }

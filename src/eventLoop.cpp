@@ -2,6 +2,7 @@
 
 EventLoop::EventLoop(std::function<void()> intiEvent) {
     events.push_back(intiEvent);
+    descriptions.push_back("事件循环初始化");
 }
 
 void EventLoop::enroll(std::function<void()> event,
@@ -9,13 +10,13 @@ void EventLoop::enroll(std::function<void()> event,
     events.push_back(event);
     descriptions.push_back(description);
     // printf("INT: 发现注册 %s\n", description.c_str());
-    spdlog::info("发现注册 |id{}| |des {}|", events.size() - 1, description);
+    spdlog::info("发现注册: |id{}| |des {}|", events.size() - 1, description);
     if (state == 'S') state = 'A';
 }
 
 void EventLoop::start() {
     int eventId = 0;
-    spdlog::info("事件循环开始");
+    spdlog::info("事件循环开始\n");
     while (state == 'A') {
         eventId = next(eventId);
     };
@@ -24,7 +25,7 @@ void EventLoop::start() {
 int EventLoop::next(int eventId) {
     if (eventId < events.size()) {
         // printf("INT: 正在运行 id:%d\n", eventId);
-        spdlog::info("正在运行 |id{}| |des {}| \n", eventId,
+        spdlog::info("正在运行: |id{}| |des {}|", eventId,
                      descriptions[eventId - 1]);
         events[eventId]();
     } else {
