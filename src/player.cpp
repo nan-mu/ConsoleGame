@@ -15,20 +15,15 @@ bool player::mayIReqCard() {
     spdlog::info("玩家 {} 选择不要牌", name);
     return false;
 }
-void player::showCard() {
-    printf("\n%s现在的手牌有：", name.c_str());
+std::string player::showCard() {
     std::string cardsStr = "";
-
-    for (size_t i = 0; i < hand.size(); i++) {
+    cardsStr += "\n" + name + "现在的手牌有：";
+    for (size_t i = 0; i < hand.size(); i++)
         cardsStr += "|" + hand[i].getName() + "| ";
-    }
-    if (hand.size())
-        printf("%s", cardsStr.c_str());
-    else
-        printf("null");
-    spdlog::info("玩家 {} 现有手牌有: {}", name,
+    spdlog::info("展示手牌：玩家 {} 现有手牌有: {}", name,
                  cardsStr.empty() ? "null" : cardsStr);
-    printf("\n");
+    if (!hand.size()) cardsStr += "null\n";
+    return cardsStr;
 }
 
 std::string player::getName() { return name; }

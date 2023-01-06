@@ -100,7 +100,7 @@ void roundManager::resCard(std::vector<card> &playerHand) {
 }
 void roundManager::resCard() {
     for (size_t i = 0; i < players.size(); i++) {
-        players[i].showCard();
+        printf("%s", players[i].showCard().c_str());
         bool temp = false;
         if (mustReqCard[i] != 0) {
             temp = players[i].mayIReqCard();
@@ -157,5 +157,6 @@ void roundManager::getPoint() {
     for (size_t i = 0; i < winner.size(); i++) {
         printf("[%s]", players[winner[i]].getName().c_str());
     }
+    spdlog::info("胜者为{}，他的牌为{}，点数为{}");
     printf("\n");
 }
