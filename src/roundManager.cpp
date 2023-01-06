@@ -56,12 +56,12 @@ void roundManager::play(std::vector<player> _players) {
     enroll(
         [&]() -> void {
             for (size_t i = 0; i < players.size(); i++)
-                mustReqCard.push_back(2);
-            turnsNum = 1;
+                for (int ii = 0; ii < 3; ii++) resCard(players[i].hand);
+            turnsNum = 4;
             resCard();
             play();
         },
-        "1轮要牌");
+        "1轮要牌，强制给牌");
     start();
 }
 void roundManager::play() {
@@ -101,16 +101,7 @@ void roundManager::resCard(std::vector<card> &playerHand) {
 void roundManager::resCard() {
     for (size_t i = 0; i < players.size(); i++) {
         printf("%s", players[i].showCard().c_str());
-        bool temp = false;
-        if (mustReqCard[i] != 0) {
-            temp = players[i].mayIReqCard();
-        }
-        if (temp || (mustReqCard[i] == 0)) {
-            resCard(players[i].hand);
-            if (!temp && mustReqCard[i] == 0) printf("\n本回合已自动要牌");
-            mustReqCard[i] = 2;
-        } else
-            mustReqCard[i]--;
+        if (players[i].mayIReqCard()) resCard(players[i].hand);
     }
 }
 int roundManager::getPoint(int playerIndex) {
@@ -146,6 +137,7 @@ void roundManager::getPoint() {
     spdlog::info("对局结束，计算分数");
     for (size_t i = 0; i < players.size(); i++) {
         tempPoint = getPoint(i);
+        if (!i) winnerPoint = tempPoint;
         if (tempPoint <= 21) {
             if (winnerType) {
                 if (winnerPoint < tempPoint) {
@@ -175,7 +167,6 @@ void roundManager::getPoint() {
             }
         }
     }
-
     printf("这一轮的赢家是：");
     for (size_t i = 0; i < winner.size(); i++) {
         printf("[%s]", players[winner[i]].getName().c_str());

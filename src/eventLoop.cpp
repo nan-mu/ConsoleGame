@@ -26,7 +26,7 @@ int EventLoop::next(int eventId) {
     if (eventId < events.size()) {
         // printf("INT: 正在运行 id:%d\n", eventId);
         spdlog::info("正在运行: |id{}| |des {}|", eventId,
-                     descriptions[eventId - 1]);
+                     descriptions[eventId]);
         events[eventId]();
     } else {
         state = 'F';

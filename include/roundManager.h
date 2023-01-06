@@ -9,7 +9,6 @@ class roundManager : private EventLoop {
     std::vector<card> cardLib;      // 牌库
     std::vector<card> tempCardLib;  // 临时牌库，用于打乱牌库顺序
     std::vector<player> players;    // 加入游戏的玩家集
-    std::vector<int> mustReqCard;   // 判断是否必须要牌
     int turnsNum = 0;               // 回合数计数
     // void nextStep(char flag);       // 还没写完 (发现这个没用🌿)
     void showCardsLib();  // debug下查看牌库
