@@ -6,7 +6,7 @@ bool player::mayIReqCard() {
     char res = 'n';
     printf("\n%s想要牌吗？(y/n):", name.c_str());
     while ((res = getchar()) == 'y') {
-        // printf("catch y");
+        // 清除缓存
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         spdlog::info("要牌阶段: 玩家|{}|选择要牌", name);
         return (res == 'y');

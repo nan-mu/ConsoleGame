@@ -117,22 +117,21 @@ int roundManager::getPoint(int playerIndex) {
     int res = 0;
     bool A = false;
     for (size_t i = 0; i < players[playerIndex].hand.size(); i++) {
-        if (!(players[playerIndex].hand[i].getValue() % 13)) {
-            spdlog::debug("算牌阶段: 计算牌|{}| |{}| res|{}|",
-                          players[playerIndex].hand[i].getName(),
-                          players[playerIndex].hand[i].getValue(), res);
+        if ((players[playerIndex].hand[i].getValue() % 13) != 0) {
+            spdlog::info("算牌阶段: 计算牌|{}| |{}| res|{}|",
+                         players[playerIndex].hand[i].getName(),
+                         players[playerIndex].hand[i].getValue(), res);
             res += (players[playerIndex].hand[i].getValue() % 13) + 1;
         } else {
             // 记录玩家是否持有A
             A = true;
+            res += 1;
         }
     }
     if (A) {
         // 玩家手中有A时,判断对玩家有利的情况
         if (res <= 10) {
             res += 11;
-        } else {
-            res += 1;
         }
     }
     players[playerIndex].showCard();
@@ -142,20 +141,41 @@ int roundManager::getPoint(int playerIndex) {
 }
 void roundManager::getPoint() {
     std::vector<int> winner;
-    int winnerPoint = 0;
+    int winnerPoint = 0, tempPoint = 21;
+    bool winnerType = false;  // 用false表示超过21分，用true表示没超过21分
     spdlog::info("对局结束，计算分数");
     for (size_t i = 0; i < players.size(); i++) {
-        int tempPoint = getPoint(i);
-        if (winnerPoint < tempPoint) {
-            winnerPoint = tempPoint;
-            // 清除平局情况
-            std::vector<int>().swap(winner);
-            winner.push_back(i);
-        } else if (winnerPoint == tempPoint) {
-            // 平局情况
-            winner.push_back(i);
+        tempPoint = getPoint(i);
+        if (tempPoint <= 21) {
+            if (winnerType) {
+                if (winnerPoint < tempPoint) {
+                    winnerPoint = tempPoint;
+                    // 清除平局情况
+                    std::vector<int>().swap(winner);
+                    winner.push_back(i);
+                } else if (winnerPoint == tempPoint) {
+                    // 平局情况
+                    winner.push_back(i);
+                }
+            }
+            winnerType = true;
+        } else {
+            if (winnerType)
+                continue;
+            else {
+                if (winnerPoint > tempPoint) {
+                    winnerPoint = tempPoint;
+                    // 清除平局情况
+                    std::vector<int>().swap(winner);
+                    winner.push_back(i);
+                } else if (winnerPoint == tempPoint) {
+                    // 平局情况
+                    winner.push_back(i);
+                }
+            }
         }
     }
+
     printf("这一轮的赢家是：");
     for (size_t i = 0; i < winner.size(); i++) {
         printf("[%s]", players[winner[i]].getName().c_str());
