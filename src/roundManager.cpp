@@ -56,7 +56,7 @@ void roundManager::play(std::vector<player> _players) {
     enroll(
         [&]() -> void {
             for (size_t i = 0; i < players.size(); i++)
-                mustReqCard.push_back(3);
+                mustReqCard.push_back(2);
             turnsNum = 1;
             resCard();
             play();
