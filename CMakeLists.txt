@@ -15,6 +15,6 @@ find_package(spdlog CONFIG REQUIRED)
 
 # 创建出口并添加源码
 add_executable(ConsoleGame main.cpp)
-target_link_libraries(p21 PRIVATE spdlog::spdlog)
-target_link_libraries(ConsoleGame PRIVATE spdlog::spdlog)
+target_link_libraries(p21 PRIVATE spdlog::spdlog_header_only)
+target_link_libraries(ConsoleGame PRIVATE spdlog::spdlog_header_only)
 target_link_libraries(ConsoleGame PRIVATE p21)

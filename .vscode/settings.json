@@ -65,5 +65,6 @@
     "cmake.configureOnOpen": true,
     "cmake.configureSettings": {
         "CMAKE_TOOLCHAIN_FILE": "/home/nan/vcpkg/scripts/buildsystems/vcpkg.cmake"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

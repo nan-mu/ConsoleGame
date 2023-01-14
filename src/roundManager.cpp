@@ -1,7 +1,5 @@
 #include "roundManager.h"
 
-#include "global.h"
-
 roundManager::roundManager()
     : EventLoop([&]() -> void {
           // init cardLib
