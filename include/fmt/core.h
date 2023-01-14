@@ -231,12 +231,12 @@
 #  define FMT_CLASS_API FMT_MSC_WARNING(suppress : 4275)
 #  ifdef FMT_EXPORT
 #    define FMT_API __declspec(dllexport)
-#  elif defined(FMT_SHARED)
+#  elif 1
 #    define FMT_API __declspec(dllimport)
 #  endif
 #else
 #  define FMT_CLASS_API
-#  if defined(FMT_EXPORT) || defined(FMT_SHARED)
+#  if defined(FMT_EXPORT) || 1
 #    if defined(__GNUC__) || defined(__clang__)
 #      define FMT_API __attribute__((visibility("default")))
 #    endif

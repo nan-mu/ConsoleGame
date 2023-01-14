@@ -15,7 +15,7 @@ int main() {
 
     // 创建日志文件
     auto file_logger = spdlog::basic_logger_st(
-        "basic_logger", "../logs/p21_" + str_time + ".log");
+        "basic_logger", "./logs/p21_" + str_time + ".log");
     spdlog::set_default_logger(file_logger);
     spdlog::set_pattern("[%Y-%m-%d %H:%M:%S.%e][%l]: %v");
     spdlog::info("game start!");
