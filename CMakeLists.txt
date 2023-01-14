@@ -18,3 +18,5 @@ add_executable(ConsoleGame main.cpp)
 target_link_libraries(p21 PRIVATE spdlog::spdlog_header_only)
 target_link_libraries(ConsoleGame PRIVATE spdlog::spdlog_header_only)
 target_link_libraries(ConsoleGame PRIVATE p21)
+
+# test gpg
