@@ -82,6 +82,49 @@
                 "kind": "test",
                 "isDefault": true
             }
+        },
+        {
+            "type": "shell",
+            "label": "cmake-mingw",
+            "command": "cmake",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [
+                "-DCMAKE_SYSTEM_NAME=windows",
+                "-DCMAKE_CXX_COMPILER=x86_64-w64-mingw32-g++",
+                "-B ${workspaceFolder}/winBudid",
+                "-S ."
+            ],
+            "group": {
+                "kind": "build",
+            }
+        },
+        {
+            "type": "shell",
+            "label": "make-mingw",
+            "command": "make",
+            "args": [
+                "-j"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/winBuild"
+            },
+            "group": {
+                "kind": "build",
+            }
+        },
+        {
+            "label": "cmakeWinOrder",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "cmake-mingw",
+                "make-mingw"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
         }
     ]
 }

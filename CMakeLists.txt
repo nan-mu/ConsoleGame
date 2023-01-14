@@ -2,8 +2,10 @@
 cmake_minimum_required(VERSION 3.5)
 
 # 引入spdlog
-set(spdlog_DIR /home/nan/vcpkg/packages/spdlog_x64-linux/share/spdlog)
-set(fmt_DIR /home/nan/vcpkg/packages/fmt_x64-linux/share/fmt)
+# set(spdlog_DIR /home/nan/vcpkg/packages/spdlog_x64-linux/share/spdlog)
+# set(fmt_DIR /home/nan/vcpkg/packages/fmt_x64-linux/share/fmt)
+
+set(CMAKE_TOOLCHAIN_FILE /home/nan/vcpkg/scripts/buildsystems/vcpkg.cmake)
 
 # 指定项目名称，使用c++(cxx)，头文件路径
 project(ConsoleGame)
