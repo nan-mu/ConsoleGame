@@ -1,0 +1,31 @@
+compiler = g++
+debugFlags = -Wall -g
+buildFlags = -O2
+ar = ar
+builddir = log
+
+rule compile
+    command = $compiler -MMD -MF $out.d $buildFlags -c $in -o $out -I../include
+    description = 编译 $out
+    depfile = $out.d
+
+rule ar
+    command = rm -f $out && $ar crs $out $in
+    description = 打包静态库 $in -> $out
+
+rule link
+    command = $compiler $buildFlags -o $out $in -L../lib -lfmt -lspdlog -lp21
+    description = 链接 $in -> $out
+
+# card eventLoop global player roundManager
+
+build ./temp/main.o: compile ../main.cpp
+build ./temp/card.o: compile ../src/card.cpp
+build ./temp/eventLoop.o: compile ../src/eventLoop.cpp
+build ./temp/global.o: compile ../src/global.cpp
+build ./temp/player.o: compile ../src/player.cpp
+build ./temp/roundManager.o: compile ../src/roundManager.cpp
+
+build ./ConsoleGame: link ./temp/main.o
+
+build ../lib/libp21.a: ar ./temp/card.o ./temp/eventLoop.o ./temp/global.o ./temp/player.o ./temp/roundManager.o
