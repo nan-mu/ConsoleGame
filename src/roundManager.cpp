@@ -5,7 +5,11 @@ roundManager::roundManager()
           // init cardLib
           for (size_t i = 0; i < 53; i++) cardLib.push_back(card(i));
       }) {}
-roundManager::~roundManager() {}
+roundManager::~roundManager() {
+    vector().swap(cardLib);
+    vector().swap(tempCardLib);
+    vector().swap(players);
+}
 void roundManager::debug() {
     randCards();
     showCardsLib();
@@ -14,9 +18,6 @@ void roundManager::debug() {
     as.push_back(a);
     play(as);
 }
-/// @brief 根据玩家人数开始对局
-/// @param num 玩家人数
-/// @param cusName 是否自定义玩家名字
 void roundManager::pvp(int num, bool cusName) {
     randCards();
     std::vector<player> as;

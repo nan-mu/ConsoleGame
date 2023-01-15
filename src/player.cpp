@@ -46,5 +46,4 @@ std::string player::showCard() {
     spdlog::info("展示手牌: 玩家|{}|，{}", name, cardsStr);
     return cardsStr;
 }
-
 std::string player::getName() { return name; }

@@ -27,5 +27,7 @@ build ./temp/player.o: compile ../src/player.cpp
 build ./temp/roundManager.o: compile ../src/roundManager.cpp
 
 build ./ConsoleGame: link ./temp/main.o
-
 build ../lib/libp21.a: ar ./temp/card.o ./temp/eventLoop.o ./temp/global.o ./temp/player.o ./temp/roundManager.o
+
+build all: phony ./ConsoleGame ../lib/libp21.a
+default all
