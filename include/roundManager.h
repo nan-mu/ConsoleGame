@@ -19,7 +19,7 @@ class roundManager : private EventLoop {
     void randCards();                 // 随机牌库
     void debug();                     // debug
     void pvp(int num, bool cusName);  // pvp
-    // void pve();        // pve，没写完
+    void pve(bool cusName);           // pve
     void play(std::vector<player>
                   _players);  // 主加载进程，添加第一次要牌任务和要牌尾调用函数
     void play();  // 要牌尾调用函数

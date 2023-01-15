@@ -1,7 +1,26 @@
 #include "player.h"
 
 player::player(std::string _name) { name = _name; }
-player::player() {}
+player::player() {
+    name = "电脑玩家" + std::to_string(randNumber(3));
+    isBot = true;
+}
+bool player::mayEReqCard(int point) {
+    bool des;
+    if (point >= 21)
+        des = false;
+    else if ((21 - point) < randNum(engine))
+        des = false;
+    else
+        des = true;
+    if (des) {
+        printf("\n电脑选择要牌");
+        spdlog::info("电脑选择要牌");
+    } else {
+        printf("\n电脑选择不要牌");
+        spdlog::info("电脑选择不要牌");
+    }
+}
 bool player::mayIReqCard() {
     char res = 'n';
     printf("\n%s想要牌吗？(y/n):", name.c_str());
