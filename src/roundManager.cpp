@@ -35,6 +35,25 @@ void roundManager::pvp(int num, bool cusName) {
     spdlog::info("玩家初始化结束, 载入{}位玩家", num);
     play(as);
 }
+void roundManager::pve(bool cusName) {
+    randCards();
+    std::vector<player> as;
+    std::string name = "";
+    if (cusName) {
+        printf("请输入玩家的名字:");
+        getline(std::cin, name);
+    } else {
+        name = "player";
+    }
+    spdlog::info("玩家 {}初始化", name);
+    player a(name);
+    player ai();
+    as.push_back(a);
+    as.push_back(ai);
+
+    spdlog::info("玩家初始化结束, 载入1位玩家，一位电脑");
+    play(as);
+}
 void roundManager::showCardsLib() {
     enroll(
         [=] {
@@ -99,7 +118,10 @@ void roundManager::resCard(std::vector<card> &playerHand) {
 void roundManager::resCard() {
     for (size_t i = 0; i < players.size(); i++) {
         printf("%s", players[i].showCard().c_str());
-        if (players[i].mayIReqCard()) resCard(players[i].hand);
+        // 判断是否为玩家
+        if (players[i].isBot ? players[i].mayEReqCard(getPoint(i))
+                             : players[i].mayIReqCard())
+            resCard(players[i].hand);
     }
 }
 int roundManager::getPoint(int playerIndex) {
