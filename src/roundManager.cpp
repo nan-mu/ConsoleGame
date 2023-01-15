@@ -47,7 +47,7 @@ void roundManager::pve(bool cusName) {
     }
     spdlog::info("玩家 {}初始化", name);
     player a(name);
-    player ai();
+    player ai;
     as.push_back(a);
     as.push_back(ai);
 

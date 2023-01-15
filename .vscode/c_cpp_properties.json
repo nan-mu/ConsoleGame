@@ -4,8 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/lib/gcc/x86_64-linux-gnu/11/include/",
-                "/home/nan/vcpkg/packages/spdlog_x64-linux/include/"
+                "${workspaceFolder}/**/**",
+                "/usr/lib/gcc/x86_64-linux-gnu/11/include/"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/cpp",

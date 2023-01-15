@@ -9,17 +9,20 @@ bool player::mayEReqCard(int point) {
     bool des;
     if (point >= 21)
         des = false;
-    else if ((21 - point) < randNum(engine))
-        des = false;
-    else
-        des = true;
+    else {
+        if ((21 - point) < (int)randNumber(2))
+            des = false;
+        else
+            des = true;
+    }
     if (des) {
         printf("\n电脑选择要牌");
         spdlog::info("电脑选择要牌");
     } else {
         printf("\n电脑选择不要牌");
-        spdlog::info("电脑选择不要牌");
+        spdlog::info("电脑选择不要牌\n");
     }
+    return des;
 }
 bool player::mayIReqCard() {
     char res = 'n';

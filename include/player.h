@@ -1,12 +1,13 @@
 #pragma once
 #include "card.h"
+#include "global.h"
 
 class player {
    private:
-    bool isBot = false;            // 是否为ai
     std::string name = "defined";  // 玩家名字
 
    public:
+    bool isBot = false;      // 是否为ai
     std::vector<card> hand;  // 玩家手上的牌数组
     bool mayIReqCard();  // 后期会写ai，所以单独写一个真人要牌，ai要牌就重载
     bool mayEReqCard(int point);  // 不重载了，新建一个把

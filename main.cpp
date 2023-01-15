@@ -1,3 +1,7 @@
+#include "card.h"
+#include "eventLoop.h"
+#include "global.h"
+#include "player.h"
 #include "roundManager.h"
 
 int main() {
