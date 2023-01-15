@@ -16,11 +16,11 @@ bool player::mayEReqCard(int point) {
             des = true;
     }
     if (des) {
-        printf("\n电脑选择要牌");
+        printf("\n电脑选择要牌\n");
         spdlog::info("电脑选择要牌");
     } else {
-        printf("\n电脑选择不要牌");
-        spdlog::info("电脑选择不要牌\n");
+        printf("\n电脑选择不要牌\n");
+        spdlog::info("电脑选择不要牌");
     }
     return des;
 }

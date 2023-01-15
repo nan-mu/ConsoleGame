@@ -4,6 +4,7 @@
 #include "global.h"
 #include "player.h"
 
+/// @brief 管理p21游戏的所有活动
 class roundManager : private EventLoop {
    private:
     /// @brief 牌库
@@ -14,6 +15,8 @@ class roundManager : private EventLoop {
     std::vector<player> players;
     /// @brief debug下查看牌库
     void showCardsLib();
+    /// @brief 回合数
+    int turnsNum;
 
    public:
     /// @brief

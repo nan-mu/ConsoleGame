@@ -1,5 +1,4 @@
 #pragma once
-// 引用库和部分函数
 
 #include <chrono>
 #include <functional>

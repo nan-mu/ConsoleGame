@@ -6,9 +6,9 @@ roundManager::roundManager()
           for (size_t i = 0; i < 53; i++) cardLib.push_back(card(i));
       }) {}
 roundManager::~roundManager() {
-    vector().swap(cardLib);
-    vector().swap(tempCardLib);
-    vector().swap(players);
+    std::vector<card>().swap(cardLib);
+    std::vector<card>().swap(tempCardLib);
+    std::vector<player>().swap(players);
 }
 void roundManager::debug() {
     randCards();
@@ -66,11 +66,14 @@ void roundManager::showCardsLib() {
         "打印牌库");
 }
 void roundManager::play(std::vector<player> _players) {
+    // 加载玩家
     players.swap(_players);
+    // 打印玩家列表
     printf("\n参赛玩家：");
     for (size_t i = 0; i < players.size(); i++)
         printf("%s ", players[i].getName().c_str());
     printf("\n");
+    // 注册第一轮要牌
     enroll(
         [&]() -> void {
             for (size_t i = 0; i < players.size(); i++)
@@ -83,7 +86,7 @@ void roundManager::play(std::vector<player> _players) {
     start();
 }
 void roundManager::play() {
-    if (turnsNum <= 5) {
+    if (turnsNum < 5) {
         enroll(
             [&]() -> void {
                 turnsNum++;
